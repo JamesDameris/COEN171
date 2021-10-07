@@ -1,4 +1,4 @@
-program tree(input, output);
+program bst(input, output);
     type tree = ^node;
     type
         node = record  
