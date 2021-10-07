@@ -11,7 +11,7 @@ program bst(input, output);
     var x : integer;
 
     // might have to change this to a function, might not
-    procedure insert(var root : tree; value : integer);
+    function insert(var root : tree; value : integer);
         var cell : tree;
     begin
         if root = nil then begin
@@ -19,10 +19,13 @@ program bst(input, output);
             root^.left := nil;
             root^.right := nil;
             root^.info := value;
-        else if root^.info < value then
-            insert(root^.right, value);
-        else if root^.info > value then
-            insert(root^.left, value);
+        end;
+        else if root^.info < value then begin
+            root^.right := insert(root^.right, value);
+        end;
+        else if root^.info > value then begin
+            root^.left := insert(root^.left, value);
+        end;
         end;
     end;
 
