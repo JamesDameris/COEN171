@@ -20,9 +20,9 @@ program bst(input, output);
             root^.right := nil;
             root^.info := value;
         else if root^.info < value then
-            root^.right := insert(root^.right, value);
+            insert(root^.right, value);
         else if root^.info > value then
-            root^.left := insert(root^.left, value);
+            insert(root^.left, value);
         end;
     end;
 
