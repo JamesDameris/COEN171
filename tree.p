@@ -1,11 +1,12 @@
 program tree(input, output);
-    type 
-        tree = ^node;
+    type tree = ^node;
+    type
         node = record  
             info : integer;
             left : ^node;
             right : ^node
         end;
+    
     var t : tree;
     var x : integer;
 
