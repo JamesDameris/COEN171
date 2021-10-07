@@ -9,53 +9,50 @@ program bst(input, output);
     var t : tree;
     var x : integer;
 
-    // might have to change this to a function, might not
-    function insert(var root : tree; value : integer);
-        var cell : tree;
+    procedure insert(var root : tree; value : integer);
+    
     begin
-        if root = nil then begin
-            root := new(cell);
-            root^.left := nil;
+        if root = nil then 
+	begin
+            new(root);
+	    root^.left := nil;
             root^.right := nil;
             root^.info := value;
-        end;
-        else if root^.info < value then begin
-            root^.right := insert(root^.right, value);
-        end;
-        else if root^.info > value then begin
-            root^.left := insert(root^.left, value);
-        end;
-        end;
+        end
+        else if root^.info < value then 
+            insert(root^.right, value)
+        else if root^.info > value then
+            insert(root^.left, value)
     end;
 
-    function member(var root : tree; value : integer) : bool;
+    function member(var root : tree; value : integer) : boolean;
     begin 
-        if root == nil then begin
-            member = TRUE;
-        else if root^.info == value then
-            member := FALSE;
+        if root = nil then begin
+            member := FALSE
+	end
+        else if root^.info = value then
+            member := TRUE
         else if root^.info < value then
-            member := member(root^.right, value);
+            member := member(root^.right, value)
         else
-            member := member(root^.left, value);
-        end;
+            member := member(root^.left, value)
     end;
 
 begin
     t := nil;
     readln(x);
     
-    while x != -1 do begin
-        t := insert(t, x);
+    while x <> -1 do begin
+        insert(t, x);
         readln(x);
     end;
 
     readln(x);
 
-    while x != -1 do begin
+    while x <> -1 do begin
         writeln(member(t, x));
         readln(x);
     end;
-end;
+end.
     
     
