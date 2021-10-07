@@ -1,6 +1,5 @@
 program bst(input, output);
     type tree = ^node;
-    type
         node = record  
             info : integer;
             left : ^node;
