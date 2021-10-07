@@ -13,7 +13,7 @@ program tree(input, output);
     procedure insert(var root : tree; value : integer);
         var cell : tree;
     begin
-        if root == nil then begin
+        if root = nil then begin
             root := new(cell);
             root^.left := nil;
             root^.right := nil;
