@@ -7,13 +7,13 @@
 typedef int numbers[HIGH];
 
 
-void readarray (numbers arr) {
+void writearray (numbers arr) {
     int i;
     for (i = 0; i < HIGH; ++i) {
         printf("%d ",arr[i]);
     }
 }
-void writearray (numbers arr) {
+void readarray (numbers arr) {
     int i;
     for (i = 0; i < HIGH; ++i) {
         scanf("%d",&(arr[i]));
@@ -26,20 +26,22 @@ void exchange (int* a, int* b) {
 }
 int partition (numbers a, int y, int z) {
     int i, j, x;
+    //printf("\ny val:%d\n",y);
     x = a[y];
+    //printf("x val:%d\n",x);
     i = y - 1;
     j = z + 1;
     while (i < j) {
         do {
-            --j;
+            j = j - 1;
         } while (a[j] > x);
 
         do {
-            ++i; 
+            i = i + 1; 
         } while (a[i] < x);
 
         if (i < j) {
-            exchange(a + i, a + j);
+            exchange(&a[i], &a[j]);
         }
     }
     return j;
@@ -56,8 +58,8 @@ void quicksort (numbers a, int m, int n) {
 
 int main(void) {
     numbers a;
-    writearray(a);
-    quicksort(a , 1, HIGH);
     readarray(a);
+    quicksort(a , 1, HIGH);
+    writearray(a);
 }
 
