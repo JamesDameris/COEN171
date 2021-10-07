@@ -59,7 +59,7 @@ void quicksort (numbers a, int m, int n) {
 int main(void) {
     numbers a;
     readarray(a);
-    quicksort(a , 1, HIGH);
+    quicksort(a , 0, HIGH - 1);
     writearray(a);
 }
 
