@@ -1,3 +1,4 @@
+// James Dameris COEN 171 HW 2 tree.cpp
 #include <iostream>
 #include <cmath>
 #include "tree.h"
