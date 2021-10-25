@@ -1,3 +1,6 @@
+// James Dameris COEN 171
+// Homework 2 Queens Problem Header file
+
 class Piece {
     private:
         int r, c;

@@ -1,4 +1,4 @@
-/*
+/* James Dameris HW2 Queens problem CPP file
  * Solve the n-Pieces problem of trying to place n identical pieces on
  * an n x n chessboard.
  *
