@@ -17,14 +17,14 @@
     )
 )
 
-(define (member v tree)
+(define (member? v tree)
     (cond ((null? tree) #f
 	  )
 	  ((< v (data tree))
-	   (member v (left tree))
+	   (member? v (left tree))
 	  )
 	  ((> v (data tree))
-	   (member v (right tree))
+	   (member? v (right tree))
   	  )
 	  (else #t)
     )
